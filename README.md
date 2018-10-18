@@ -96,10 +96,6 @@ error         | `#ef5959`      | `false`  | error color
 
 <br>
 
-ex: `<coe-feedbacks @close="feedback => $feedback.remove(feedback)" :feedbacks="$feedback.list" />`
-
-<br>
-
 ## slots: component
 
 - feedbacks (slot-scope: feedback)
