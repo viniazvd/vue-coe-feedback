@@ -1,28 +1,37 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <coe-feedbacks @close="feedback => $feedback.remove(feedback)" :feedbacks="$feedback.list" />
+
+    <button @click="onSucces">show feedback success</button>
+    <button @click="onInfo">show feedback info</button>
+    <button @click="onError">show feedback error</button>
+
+    <button @click="onCoe">set coe</button>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import CoeFeedbacks from './lib/components/CoeFeedbacks'
 
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
+  components: { CoeFeedbacks },
+
+  methods: {
+    onSucces () {
+      this.$feedback.add({ type: 'success', message: 'SUCCESS' })
+    },
+
+    onInfo () {
+      this.$feedback.add({ type: 'info', message: 'INFO' })
+    },
+
+    onError () {
+      this.$feedback.add({ type: 'error', message: 'ERROR' })
+    },
+
+    onCoe () {
+      this.$store.dispatch('COE', { type: 'success', message: 'COÉ MANÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉÉ!' })
+    }
   }
 }
 </script>
-
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
