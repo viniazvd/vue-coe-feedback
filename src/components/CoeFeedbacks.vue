@@ -1,6 +1,6 @@
 <template>
   <transition-group name="feedback" class="coe-feedbacks" tag="ul">
-    <slot name="feedbacks" :feedbacks="feedbacks">
+    <slot name="feedbacks" :feedbacks="feedbacks" :info="info" :success="success" :error="error">
       <li
         v-for="(feedback, index) in feedbacks"
         :key="index"
