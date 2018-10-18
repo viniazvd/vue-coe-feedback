@@ -93,7 +93,9 @@ error         | `#ef5959`      | `false`  | error color
 ## events
 
 - close
+
 <br>
+
 ex: `<coe-feedbacks @close="feedback => $feedback.remove(feedback)" :feedbacks="$feedback.list" />`
 
 <br>
