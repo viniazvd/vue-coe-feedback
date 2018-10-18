@@ -25,8 +25,9 @@ export default {
       const isError = payload instanceof Error
 
       const feedback = {
-        type: payload.type || (isError ? 'error' : 'info'),
-        message: payload.message || payload
+        type: payload.type || (isError && 'error'),
+        message: payload.message || 'error message',
+        highlighted: payload.highlighted || 'error highlighted message'
       }
 
       commit('SET_FEEDBACKS', [ ...getters['__feedbacks'], feedback ])
