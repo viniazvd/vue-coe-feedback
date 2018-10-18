@@ -8,7 +8,10 @@
         :style="color"
       >
         <slot name="message">
-          <span class="message">{{ feedback.message }}</span>
+          <div class="message-container">
+            <span class="message">{{ feedback.message }} </span>
+            <span class="highlighted">{{ feedback.highlighted }}</span>
+          </div>
         </slot>
 
         <slot name="button">
@@ -92,10 +95,18 @@ $feedback-colors: (
 
     &:last-child { margin-bottom: 0; }
 
-    & > .message {
+    & > .message-container {
       color: #fff;
-      margin: { left: 20px; top: 20px; bottom: 20px; }
+      font-size: 14px;
+      line-height: 19px;
+      font-weight: bold;
       word-break: break-all;
+      font-family: "Nunito Sans";
+      text-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
+      margin: { left: 20px; top: 20px; bottom: 20px; }
+
+      & > .message {}
+      & > .highlighted {}
     }
 
     & > .button > .icon { margin: { left: 15px; right: 15px; } }
