@@ -30,8 +30,10 @@ Vue.use(VueCoeFeedback, store, options)
 
 ## how to use?
 - inside the component: <br>
-`this.$feedback.add({ type, message, highlighted })` <br>
-`this.$feedback.remove({ type, message, highlighted })`
+```
+this.$feedback.add({ type, message, highlighted })
+this.$feedback.remove({ type, message, highlighted })
+`
 
 - inside the store:
 ```
