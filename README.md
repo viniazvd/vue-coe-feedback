@@ -33,7 +33,7 @@ Vue.use(VueCoeFeedback, store, options)
 ```
 this.$feedback.add({ type, message, highlighted })
 this.$feedback.remove({ type, message, highlighted })
-`
+```
 
 - inside the store:
 ```
