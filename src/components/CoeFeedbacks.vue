@@ -87,6 +87,7 @@ $feedback-colors: (
     display: flex;
     align-items: center;
     justify-content: space-between;
+    min-height: 60px;
     opacity: 0.9;
     min-height: 20px;
     margin-bottom: 20px;
