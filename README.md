@@ -54,7 +54,7 @@ actions: {
 - success
 - error
 
-## Register in component
+## Example
 ```vue
 <template>
   <div id="app">
