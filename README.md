@@ -28,6 +28,26 @@ import { VueCoeFeedback } from 'vue-coe-feedback'
 Vue.use(VueCoeFeedback, store, options)
 ```
 
+## how to use?
+- inside the component:
+`this.$feedback.add({ type, message, highlighted })`
+
+- inside the store:
+```
+actions: {
+  SOME_ACTION: ({ commit, dispatch }) => {
+    ...
+    dispatch('FEEDBACKS_ADD', { type, message, highlighted })
+    ...
+  }
+}
+```
+
+## options type
+- info 
+- success
+- error
+
 **Register in component**
 ```vue
 <template>
