@@ -29,14 +29,14 @@ Vue.use(VueCoeFeedback, store, options)
 ```
 
 ## how to use?
-- inside the component: <br>
+- **inside the component:** <br>
 ```
 this.$feedback.add({ type, message, highlighted })
 or
 this.$feedback.remove({ type, message, highlighted })
 ```
 
-- inside the store:
+- **inside the store:**
 ```
 actions: {
   SOME_ACTION: ({ commit, dispatch }) => {
@@ -49,12 +49,12 @@ actions: {
 }
 ```
 
-## options type
+**options type**
 - info 
 - success
 - error
 
-**Register in component**
+## Register in component
 ```vue
 <template>
   <div id="app">
@@ -98,7 +98,7 @@ export default {
 
 <br>
 
-## options: plugin instance
+## Options: plugin instance
 
 Name          | Default        | Required | About
 :-------------|:--------------:|:--------:|:-------------------------
@@ -116,14 +116,14 @@ error         | `#ef5959`      | `false`  | error color
 
 <br>
 
-## events
+## Events
 
 - close
 
 <br>
 
-## slots: component
+## Slots: component
 
-- feedbacks (slot-scope: feedback, info, success, error)
+- feedbacks (**slot-scope**: feedback, info, success, error)
 - message
 - button
