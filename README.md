@@ -32,6 +32,7 @@ Vue.use(VueCoeFeedback, store, options)
 - inside the component: <br>
 ```
 this.$feedback.add({ type, message, highlighted })
+or
 this.$feedback.remove({ type, message, highlighted })
 ```
 
@@ -41,6 +42,8 @@ actions: {
   SOME_ACTION: ({ commit, dispatch }) => {
     ...
     dispatch('FEEDBACKS_ADD', { type, message, highlighted })
+    or
+    dispatch('FEEDBACKS_REMOVE', { type, message, highlighted })
     ...
   }
 }
