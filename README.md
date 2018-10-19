@@ -50,7 +50,7 @@ export default {
   
   methods: {
     onSucces () {
-      this.$feedback.add({ type: 'success', message: 'SUCCESS' })
+      this.$feedback.add({ type: 'success', message: 'A sua compra foi', highlighted: 'aprovada!' })
     },
 
     onInfo () {
@@ -98,6 +98,6 @@ error         | `#ef5959`      | `false`  | error color
 
 ## slots: component
 
-- feedbacks (slot-scope: feedback)
+- feedbacks (slot-scope: feedback, info, success, error)
 - message
 - button
