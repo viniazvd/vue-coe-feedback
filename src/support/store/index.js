@@ -26,8 +26,8 @@ export default {
 
       const feedback = {
         type: payload.type || (isError && 'error'),
-        message: payload.message || 'error message',
-        highlighted: payload.highlighted || 'error highlighted message'
+        message: payload.message,
+        highlighted: payload.highlighted
       }
 
       commit('SET_FEEDBACKS', [ ...getters['__feedbacks'], feedback ])
