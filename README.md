@@ -29,7 +29,7 @@ Vue.use(VueCoeFeedback, store, options)
 ```
 
 ## how to use?
-- inside the component:
+- inside the component: <br>
 `this.$feedback.add({ type, message, highlighted })`
 
 - inside the store:
