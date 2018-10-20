@@ -126,3 +126,6 @@ error         | `#ef5959`      | `false`  | error color
 - feedbacks (**slot-scope**: feedback, info, success, error)
 - message
 - button
+
+<h2>inspired by @VitorLuizC idea</h2>
+
