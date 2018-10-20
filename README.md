@@ -127,5 +127,7 @@ error         | `#ef5959`      | `false`  | error color
 - message
 - button
 
-<h2>inspired by @VitorLuizC idea</h2>
+<br>
+
+<h3>inspired by @VitorLuizC idea</h3>
 
