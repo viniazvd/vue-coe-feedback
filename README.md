@@ -12,7 +12,7 @@
 
 <br>
 
-**Install**
+**Install** <br>
 `yarn add vue-coe-feedback`
 or
 `npm i add vue-coe-feedback`
