@@ -13,13 +13,12 @@
 <br>
 
 **Install**
-
 `yarn add vue-coe-feedback`
 or
 `npm i add vue-coe-feedback`
 
 
-**Include Plugin**
+**Configuration**
 ```javascript
 import Vue from 'vue'
 
@@ -28,7 +27,7 @@ import { VueCoeFeedback } from 'vue-coe-feedback'
 Vue.use(VueCoeFeedback, store, options)
 ```
 
-## how to use?
+**how to use?**
 - **inside the component:** <br>
 ```
 this.$feedback.add({ type, message, highlighted })
