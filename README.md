@@ -129,5 +129,5 @@ error         | `#ef5959`      | `false`  | error color
 
 <br>
 
-<h3>inspired by @VitorLuizC idea</h3>
+<h3>Inspired by @VitorLuizC idea.</h3>
 
