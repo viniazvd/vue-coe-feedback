@@ -1,2 +1,2 @@
 export { default as VueCoeFeedback } from './support/plugin'
-export { default as CoeFeedbacks } from './components/CoeFeedbacks.vue'
+export { default as CoeFeedback } from './components/CoeFeedback.vue'
