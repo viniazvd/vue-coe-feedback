@@ -12,14 +12,13 @@
 
 <br>
 
-**Install**
-
+**Install** <br>
 `yarn add vue-coe-feedback`
 or
 `npm i add vue-coe-feedback`
 
 
-**Include Plugin**
+**Configuration**
 ```javascript
 import Vue from 'vue'
 
@@ -28,7 +27,33 @@ import { VueCoeFeedback } from 'vue-coe-feedback'
 Vue.use(VueCoeFeedback, store, options)
 ```
 
-**Register in component**
+**how to use?**
+- **inside the component:** <br>
+```
+this.$feedback.add({ type, message, highlighted })
+or
+this.$feedback.remove({ type, message, highlighted })
+```
+
+- **inside the store:**
+```
+actions: {
+  SOME_ACTION: ({ commit, dispatch }) => {
+    ...
+    dispatch('FEEDBACKS_ADD', { type, message, highlighted })
+    or
+    dispatch('FEEDBACKS_REMOVE', { type, message, highlighted })
+    ...
+  }
+}
+```
+
+**options type**
+- info 
+- success
+- error
+
+## Example
 ```vue
 <template>
   <div id="app">
@@ -50,7 +75,7 @@ export default {
   
   methods: {
     onSucces () {
-      this.$feedback.add({ type: 'success', message: 'SUCCESS' })
+      this.$feedback.add({ type: 'success', message: 'A sua compra foi', highlighted: 'aprovada!' })
     },
 
     onInfo () {
@@ -72,7 +97,7 @@ export default {
 
 <br>
 
-## options: plugin instance
+## Options: plugin instance
 
 Name          | Default        | Required | About
 :-------------|:--------------:|:--------:|:-------------------------
@@ -90,14 +115,19 @@ error         | `#ef5959`      | `false`  | error color
 
 <br>
 
-## events
+## Events
 
 - close
 
 <br>
 
-## slots: component
+## Slots: component
 
-- feedbacks (slot-scope: feedback)
+- feedbacks (**slot-scope**: feedback, info, success, error)
 - message
 - button
+
+<br>
+
+<h3>Inspired by @VitorLuizC idea.</h3>
+
