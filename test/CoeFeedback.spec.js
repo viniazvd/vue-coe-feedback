@@ -6,42 +6,41 @@ const localVue = createLocalVue()
 
 localVue.use(Vuex)
 
+const store = new Vuex.Store()
+localVue.use(VueCoeFeedback, store)
+
 describe('CoeFeedback', () => {
-  let state
-  let actions
-  let store
-
-  beforeEach(() => {
-    state = {
-      feedbacks: [
-        { type: 'success', message: 'A sua compra foi', highlighted: 'aprovada!' },
-        { type: 'success', message: 'A sua compra n foi', highlighted: 'aprovada!' }
-      ]
-    }
-
-    actions = {
-      FEEDBACKS_ADD: jest.fn({ type: 'success', message: 'A sua compra foi', highlighted: 'aprovada!' })
-    }
-
-    store = new Vuex.Store({ state, actions })
-    localVue.use(VueCoeFeedback, store)
-  })
-
   test('is a Vue instance', () => {
     const wrapper = shallowMount(CoeFeedback)
 
     expect(wrapper.isVueInstance()).toBeTruthy()
   })
 
-  test('boladaum', () => {
+  test('add five feedbacks', async () => {
+    for (let i = 1; i <= 5; i++) {
+      await store.dispatch('FEEDBACKS_ADD', { type: 'success', message: 'A sua compra foi', highlighted: 'aprovada!' })
+    }
+
     const wrapper = mount(CoeFeedback, {
       store,
       localVue,
-      propsData: {
-        feedbacks: store.state.feedbacks
-      }
+      propsData: { feedbacks: store.getters.__feedbacks }
     })
 
-    expect(wrapper.findAll('li')).toHaveLength(2)
+    expect(wrapper.findAll('li')).toHaveLength(5)
+  })
+
+  test('disappear after delay', () => {
+    store.dispatch('FEEDBACKS_ADD', { type: 'success', message: 'A sua compra foi', highlighted: 'aprovada!' })
+
+    const wrapper = mount(CoeFeedback, {
+      store,
+      localVue,
+      propsData: { feedbacks: store.getters.__feedbacks }
+    })
+
+    setTimeout(() => {
+      expect(wrapper.findAll('li')).toHaveLength(0)
+    }, store.getters.__delay);
   })
 })
