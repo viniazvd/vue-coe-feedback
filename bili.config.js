@@ -8,7 +8,8 @@ module.exports = {
   input: 'src/index.js',
   banner: true,
   format: ['umd', 'umd-min', 'cjs', 'es'],
-  filename: name + '[suffix].js',
+  filename: `${name}[suffix].js`,
+  sourceMap: false,
   plugins: [
     sass(),
     vue()
