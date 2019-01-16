@@ -57,7 +57,7 @@ actions: {
 ```vue
 <template>
   <div id="app">
-    <coe-feedbacks @close="feedback => $feedback.remove(feedback)" :feedbacks="$feedback.list" />
+    <coe-feedback @close="feedback => $feedback.remove(feedback)" :feedbacks="$feedback.list" />
 
     <button @click="onSucces">show feedback success</button>
     <button @click="onInfo">show feedback info</button>
@@ -68,10 +68,10 @@ actions: {
 </template>
 
 <script>
-import { CoeFeedbacks } from 'vue-coe-feedback'
+import { CoeFeedback } from 'vue-coe-feedback'
 
 export default {
-  components: { CoeFeedbacks },
+  components: { CoeFeedback },
   
   methods: {
     onSucces () {
