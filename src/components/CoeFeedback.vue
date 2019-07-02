@@ -40,12 +40,12 @@ export default {
     },
     success: {
       type: String,
-      default: '#59efb2',
+      default: '#3CE798',
       validator: color => colorValidator(color)
     },
     error: {
       type: String,
-      default: '#ef5959',
+      default: '#FF7EB3',
       validator: color => colorValidator(color)
     }
   },
@@ -84,23 +84,25 @@ $feedback-colors: (
   margin: 0;
   bottom: 0;
   padding: 0;
-  width: 360px;
+  width: 365px;
   z-index: 999;
 
   & > .feedback {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    // min-height: 60px;
+
+    width: 100%;
     opacity: 0.9;
-    min-height: 20px;
+    min-height: 60px;
+    border-radius: 5px;
     margin-bottom: 20px;
-    border-radius: 0 5px 5px 0;
     box-shadow: -1px -1px 4px 0 rgba(0,0,0,0.2);
 
     &:last-child { margin-bottom: 0; }
 
     & > .message-container {
+      width: 285px;
       color: #fff;
       font-size: 14px;
       line-height: 19px;
