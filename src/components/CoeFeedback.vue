@@ -95,8 +95,9 @@ $feedback-colors: (
     width: 100%;
     opacity: 0.9;
     min-height: 60px;
+    margin-left: 20px;
     border-radius: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     box-shadow: -1px -1px 4px 0 rgba(0,0,0,0.2);
 
     &:last-child { margin-bottom: 0; }
@@ -107,7 +108,7 @@ $feedback-colors: (
       font-size: 14px;
       line-height: 19px;
       font-weight: bold;
-      word-break: break-all;
+      word-break: break-word;
       font-family: "Nunito Sans";
       text-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
       margin: { left: 20px; top: 20px; bottom: 20px; }
